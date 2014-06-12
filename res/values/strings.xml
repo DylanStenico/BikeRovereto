@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Bike
+        Rovereto</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_osm_map">OsmMap</string>
+    <string name="toMap">OSM</string>
+
+</resources>
