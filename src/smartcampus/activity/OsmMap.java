@@ -4,24 +4,19 @@ import java.util.ArrayList;
 
 import smartcampus.model.Station;
 import smartcampus.util.CustomInfoWindow;
+import smartcampus.util.MarkerOverlay;
 import android.app.Activity;
-import android.content.Context;
 import android.content.res.Resources;
-import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
-import android.view.MotionEvent;
 
 import com.example.openstreetmap.R;
 
 import eu.trentorise.smartcampus.osm.android.bonuspack.overlays.ExtendedOverlayItem;
-import eu.trentorise.smartcampus.osm.android.bonuspack.overlays.ItemizedOverlayWithBubble;
 import eu.trentorise.smartcampus.osm.android.views.MapController;
 import eu.trentorise.smartcampus.osm.android.views.MapView;
 import eu.trentorise.smartcampus.osm.android.views.overlay.MyLocationOverlay;
-import eu.trentorise.smartcampus.osm.android.views.overlay.Overlay;
 
 public class OsmMap extends Activity
 {
@@ -37,7 +32,7 @@ public class OsmMap extends Activity
 	ArrayList<Station> stations;
 
 	// marker for the stations
-	ItemizedOverlayWithBubble<ExtendedOverlayItem> stationsMarkersOverlay;
+	MarkerOverlay<ExtendedOverlayItem> stationsMarkersOverlay;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -119,7 +114,7 @@ public class OsmMap extends Activity
 			markers.get(i).setMarker(markerImage);
 		}
 
-		stationsMarkersOverlay = new ItemizedOverlayWithBubble<ExtendedOverlayItem>(
+		stationsMarkersOverlay = new MarkerOverlay<ExtendedOverlayItem>(
 				getApplicationContext(), markers, mapView,
 				new CustomInfoWindow(mapView, getApplicationContext()));
 
